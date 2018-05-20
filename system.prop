@@ -105,6 +105,8 @@ ro.bluetooth.wipower=false
 #as embedded wipower mode by deafult
 ro.bluetooth.emb_wp_mode=false
 
+ro.bt.bdaddr_path=/persist/bd_addr.txt
+
 #
 #snapdragon value add features
 #
