@@ -1,0 +1,10 @@
+[
+  {
+   "repository": "android_vendor_smartisan_surabaya",
+   "target_path": "vendor/smartisan/surabaya"
+  },
+  {
+    "repository": "android_device_qcom_common",
+    "target_path": "device/qcom/common"
+  }
+]
