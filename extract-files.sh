@@ -60,4 +60,10 @@ setup_vendor "$DEVICE" "$VENDOR" "$MK_ROOT" false "$CLEAN_VENDOR"
 extract "$MY_DIR"/proprietary-files.txt "$SRC" "$SECTION"
 extract "$MY_DIR"/proprietary-files-qc.txt "$SRC" "$SECTION"
 
+BLOB_ROOT="$MK_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary
+
+# Fingerprint
+sed -i 's|\x00fpc_fingerprint\x00|\x00fingerprint\x00\x00\x00\x00\x00|' $BLOB_ROOT/lib64/hw/fingerprint.fpc.so
+sed -i 's|\x00gxfingerprint\x00|\x00fingerprint\x00\x00\x00|' $BLOB_ROOT/lib64/hw/fingerprint.goodix.so
+
 "$MY_DIR"/setup-makefiles.sh
