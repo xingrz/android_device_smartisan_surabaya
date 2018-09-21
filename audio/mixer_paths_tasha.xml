@@ -35,9 +35,9 @@
     <ctl name="RX6 Digital Volume" value="84" />
     <ctl name="RX7 Digital Volume" value="84" />
     <ctl name="RX8 Digital Volume" value="84" />
-    <ctl name="ADC1 Volume" value="12" />
-    <ctl name="ADC2 Volume" value="12" />
-    <ctl name="ADC3 Volume" value="0" />
+    <ctl name="ADC1 Volume" value="6" />
+    <ctl name="ADC2 Volume" value="6" />
+    <ctl name="ADC3 Volume" value="6" />
     <ctl name="ADC4 Volume" value="0" />
     <ctl name="ADC5 Volume" value="12" />
     <ctl name="ADC6 Volume" value="12" />
@@ -54,7 +54,7 @@
     <ctl name="COMP2 Switch" value="1" />
     <ctl name="COMP7 Switch" value="1" />
     <ctl name="COMP8 Switch" value="1" />
-    <ctl name="RX HPH Mode" value="CLS_H_LP" />
+    <ctl name="RX HPH Mode" value="CLS_H_HIFI" />
     <ctl name="SLIMBUS_3_RX Port Mixer MI2S_TX" value="0" />
     <ctl name="HDMI_RX Port Mixer MI2S_TX" value="0" />
     <ctl name="SLIMBUS_0_RX Port Mixer SLIM_0_TX" value="0" />
@@ -70,8 +70,33 @@
     <ctl name="AUX_PCM_RX Audio Mixer MultiMedia14" value="0" />
     <ctl name="AUX_PCM_RX Audio Mixer MultiMedia15" value="0" />
     <ctl name="AUX_PCM_RX Audio Mixer MultiMedia16" value="0" />
+    <ctl name="SEC_MI2S_RX Audio Mixer MultiMedia1" value="0" />
+    <ctl name="SEC_MI2S_RX Audio Mixer MultiMedia3" value="0" />
+    <ctl name="SEC_MI2S_RX Audio Mixer MultiMedia4" value="0" />
+    <ctl name="SEC_MI2S_RX Audio Mixer MultiMedia5" value="0" />
+    <ctl name="SEC_MI2S_RX Audio Mixer MultiMedia7" value="0" />
+    <ctl name="SEC_MI2S_RX Audio Mixer MultiMedia10" value="0" />
+    <ctl name="SEC_MI2S_RX Audio Mixer MultiMedia11" value="0" />
+    <ctl name="SEC_MI2S_RX Audio Mixer MultiMedia12" value="0" />
+    <ctl name="SEC_MI2S_RX Audio Mixer MultiMedia13" value="0" />
+    <ctl name="SEC_MI2S_RX Audio Mixer MultiMedia14" value="0" />
+    <ctl name="SEC_MI2S_RX Audio Mixer MultiMedia15" value="0" />
+    <ctl name="SEC_MI2S_RX Audio Mixer MultiMedia16" value="0" />
+    <ctl name="TERT_MI2S_RX Audio Mixer MultiMedia1" value="0" />
+    <ctl name="TERT_MI2S_RX Audio Mixer MultiMedia3" value="0" />
+    <ctl name="TERT_MI2S_RX Audio Mixer MultiMedia4" value="0" />
+    <ctl name="TERT_MI2S_RX Audio Mixer MultiMedia5" value="0" />
+    <ctl name="TERT_MI2S_RX Audio Mixer MultiMedia7" value="0" />
+    <ctl name="TERT_MI2S_RX Audio Mixer MultiMedia10" value="0" />
+    <ctl name="TERT_MI2S_RX Audio Mixer MultiMedia11" value="0" />
+    <ctl name="TERT_MI2S_RX Audio Mixer MultiMedia12" value="0" />
+    <ctl name="TERT_MI2S_RX Audio Mixer MultiMedia13" value="0" />
+    <ctl name="TERT_MI2S_RX Audio Mixer MultiMedia14" value="0" />
+    <ctl name="TERT_MI2S_RX Audio Mixer MultiMedia15" value="0" />
+    <ctl name="TERT_MI2S_RX Audio Mixer MultiMedia16" value="0" />
     <ctl name="SLIMBUS_4_RX Audio Mixer MultiMedia1" value="0" />
     <ctl name="SLIMBUS_4_RX Audio Mixer MultiMedia2" value="0" />
+    <ctl name="MultiMedia2 Mixer SEC_MI2S_TX" value="0" />
     <ctl name="MultiMedia5 Mixer SLIM_0_TX" value="0" />
     <ctl name="MultiMedia5 Mixer AFE_PCM_TX" value="0" />
     <ctl name="MultiMedia5 Mixer TERT_MI2S_TX" value="0" />
@@ -298,6 +323,7 @@
     <ctl name="AIF1_CAP Mixer SLIM TX1" value="0"/>
     <ctl name="AIF1_CAP Mixer SLIM TX0" value="0"/>
     <ctl name="HDMI Mixer MultiMedia4" value="0" />
+    <ctl name="left Profile" value="music" />
     <!-- HFP start -->
     <ctl name="HFP_PRI_AUX_UL_HL Switch" value="0" />
     <ctl name="SLIMBUS_0_RX Port Mixer AUX_PCM_UL_TX" value="0" />
@@ -319,6 +345,12 @@
     <ctl name="MultiMedia1 Mixer AFE_PCM_TX" value="0" />
     <ctl name="AFE_PCM_RX Audio Mixer MultiMedia5" value="0" />
     <!-- usb headset end -->
+
+    <!-- hifi -->
+    <ctl name="COMP3 Switch" value="0" />
+    <ctl name="COMP4 Switch" value="0" />
+    <!-- hifi end -->
+
     <!-- fm -->
     <ctl name="SLIMBUS_0_RX Port Mixer TERT_MI2S_TX" value="0" />
     <ctl name="SLIMBUS_DL_HL Switch" value="0" />
@@ -332,6 +364,7 @@
     <ctl name="SLIM_0_RX_Voice Mixer CSVoice" value="0" />
     <ctl name="SLIM_6_RX_Voice Mixer CSVoice" value="0" />
     <ctl name="Voice_Tx Mixer SLIM_0_TX_Voice" value="0" />
+    <ctl name="SEC_MI2S_RX_Voice Mixer CSVoice" value="0" />
     <!-- Voice HDMI -->
     <ctl name="HDMI_RX_Voice Mixer CSVoice" value="0" />
     <!-- Voice BTSCO -->
@@ -361,6 +394,7 @@
     <ctl name="SLIM_0_RX_Voice Mixer VoLTE" value="0" />
     <ctl name="SLIM_6_RX_Voice Mixer VoLTE" value="0" />
     <ctl name="VoLTE_Tx Mixer SLIM_0_TX_VoLTE" value="0" />
+    <ctl name="SEC_MI2S_RX_Voice Mixer VoLTE" value="0" />
     <!-- VoLTE HDMI -->
     <ctl name="HDMI_RX_Voice Mixer VoLTE" value="0" />
     <!-- VoLTE BTSCO -->
@@ -375,6 +409,7 @@
     <ctl name="SLIM_0_RX_Voice Mixer VoiceMMode1" value="0" />
     <ctl name="SLIM_6_RX_Voice Mixer VoiceMMode1" value="0" />
     <ctl name="VoiceMMode1_Tx Mixer SLIM_0_TX_MMode1" value="0" />
+    <ctl name="SEC_MI2S_RX_Voice Mixer VoiceMMode1" value="0" />
     <!-- Multimode Voice1 HDMI -->
     <ctl name="HDMI_RX_Voice Mixer VoiceMMode1" value="0" />
     <!-- Multimode Voice1 BTSCO -->
@@ -389,6 +424,7 @@
     <ctl name="SLIM_0_RX_Voice Mixer VoiceMMode2" value="0" />
     <ctl name="SLIM_6_RX_Voice Mixer VoiceMMode2" value="0" />
     <ctl name="VoiceMMode2_Tx Mixer SLIM_0_TX_MMode2" value="0" />
+    <ctl name="SEC_MI2S_RX_Voice Mixer VoiceMMode2" value="0" />
     <!-- Multimode Voice2 HDMI -->
     <ctl name="HDMI_RX_Voice Mixer VoiceMMode2" value="0" />
     <!-- Multimode Voice2 BTSCO -->
@@ -430,6 +466,7 @@
     <ctl name="Voip_Tx Mixer AUX_PCM_TX_Voip" value="0" />
     <ctl name="AFE_PCM_RX_Voice Mixer Voip" value="0" />
     <ctl name="Voip_Tx Mixer AFE_PCM_TX_Voip" value="0" />
+    <ctl name="SEC_MI2S_RX_Voice Mixer Voip" value="0" />
     <!-- compress-voip-call end-->
 
     <!-- QCHAT start -->
@@ -578,6 +615,12 @@
         <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia1" value="1" />
     </path>
 
+    <path name="deep-buffer-playback-sec-mi2s">
+        <ctl name="SEC_MI2S_RX Audio Mixer MultiMedia1" value="1" />
+        <ctl name="left Profile" value="music" />
+    </path>
+
+
     <path name="deep-buffer-playback hdmi">
         <ctl name="HDMI Mixer MultiMedia1" value="1" />
     </path>
@@ -614,8 +657,8 @@
         <ctl name="SLIMBUS_6_RX Audio Mixer MultiMedia1" value="1" />
     </path>
 
-    <path name="deep-buffer-playback anc-headphones">
-        <ctl name="SLIMBUS_6_RX Audio Mixer MultiMedia1" value="1" />
+    <path name="deep-buffer-playback-tert-mi2s">
+        <ctl name="TERT_MI2S_RX Audio Mixer MultiMedia1" value="1" />
     </path>
 
     <path name="deep-buffer-playback speaker-and-headphones">
@@ -623,13 +666,18 @@
         <path name="deep-buffer-playback" />
     </path>
 
-    <path name="deep-buffer-playback speaker-and-anc-headphones">
-        <path name="deep-buffer-playback anc-headphones" />
-        <path name="deep-buffer-playback" />
+    <path name="deep-buffer-playback-sec-mi2s speaker-and-headphones">
+        <path name="deep-buffer-playback headphones" />
+        <path name="deep-buffer-playback-sec-mi2s" />
     </path>
 
     <path name="low-latency-playback">
         <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia5" value="1" />
+    </path>
+
+    <path name="low-latency-playback-sec-mi2s">
+        <ctl name="SEC_MI2S_RX Audio Mixer MultiMedia5" value="1" />
+        <ctl name="left Profile" value="music" />
     </path>
 
     <path name="low-latency-playback hdmi">
@@ -668,8 +716,13 @@
         <ctl name="SLIMBUS_6_RX Audio Mixer MultiMedia5" value="1" />
     </path>
 
-    <path name="low-latency-playback anc-headphones">
-        <ctl name="SLIMBUS_6_RX Audio Mixer MultiMedia5" value="1" />
+    <path name="low-latency-playback-tert-mi2s">
+        <ctl name="TERT_MI2S_RX Audio Mixer MultiMedia5" value="1" />
+    </path>
+
+    <path name="low-latency-playback-sec-mi2s speaker-and-headphones">
+        <path name="low-latency-playback headphones" />
+        <path name="low-latency-playback-sec-mi2s" />
     </path>
 
     <path name="low-latency-playback speaker-and-headphones">
@@ -677,31 +730,31 @@
         <path name="low-latency-playback" />
     </path>
 
-    <path name="low-latency-playback speaker-and-anc-headphones">
-        <path name="low-latency-playback anc-headphones" />
-        <path name="low-latency-playback" />
-    </path>
-
     <path name="audio-ull-playback">
         <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia3" value="1" />
+    </path>
+
+    <path name="audio-ull-playback-sec-mi2s">
+        <ctl name="SEC_MI2S_RX Audio Mixer MultiMedia3" value="1" />
+        <ctl name="left Profile" value="music" />
     </path>
 
     <path name="audio-ull-playback headphones">
         <ctl name="SLIMBUS_6_RX Audio Mixer MultiMedia3" value="1" />
     </path>
 
-    <path name="audio-ull-playback anc-headphones">
-        <ctl name="SLIMBUS_6_RX Audio Mixer MultiMedia3" value="1" />
+    <path name="audio-ull-playback-tert-mi2s">
+        <ctl name="TERT_MI2S_RX Audio Mixer MultiMedia3" value="1" />
+    </path>
+
+    <path name="audio-ull-playback-sec-mi2s speaker-and-headphones">
+        <path name="audio-ull-playback headphones" />
+        <path name="audio-ull-playback-sec-mi2s" />
     </path>
 
     <path name="audio-ull-playback speaker-and-headphones">
         <path name="audio-ull-playback" />
         <path name="audio-ull-playback headphones" />
-    </path>
-
-    <path name="audio-ull-playback speaker-and-anc-headphones">
-        <path name="audio-ull-playback" />
-        <path name="audio-ull-playback anc-headphones" />
     </path>
 
     <path name="audio-ull-playback hdmi">
@@ -736,6 +789,11 @@
 
     <path name="compress-offload-playback">
         <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia4" value="1" />
+    </path>
+
+    <path name="compress-offload-playback-sec-mi2s">
+        <ctl name="SEC_MI2S_RX Audio Mixer MultiMedia4" value="1" />
+        <ctl name="left Profile" value="music" />
     </path>
 
     <path name="compress-offload-playback hdmi">
@@ -774,12 +832,17 @@
         <ctl name="SLIMBUS_6_RX Audio Mixer MultiMedia4" value="1" />
     </path>
 
-    <path name="compress-offload-playback anc-headphones">
-        <ctl name="SLIMBUS_6_RX Audio Mixer MultiMedia4" value="1" />
+    <path name="compress-offload-playback-tert-mi2s">
+        <ctl name="TERT_MI2S_RX Audio Mixer MultiMedia4" value="1" />
     </path>
 
     <path name="compress-offload-playback headphones-44.1">
         <ctl name="SLIMBUS_5_RX Audio Mixer MultiMedia4" value="1" />
+    </path>
+
+    <path name="compress-offload-playback-sec-mi2s speaker-and-headphones">
+        <path name="compress-offload-playback headphones" />
+        <path name="compress-offload-playback-sec-mi2s" />
     </path>
 
     <path name="compress-offload-playback speaker-and-headphones">
@@ -787,13 +850,13 @@
         <path name="compress-offload-playback" />
     </path>
 
-    <path name="compress-offload-playback speaker-and-anc-headphones">
-        <path name="compress-offload-playback anc-headphones" />
-        <path name="compress-offload-playback" />
-    </path>
-
     <path name="compress-offload-playback2">
         <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia7" value="1" />
+    </path>
+
+    <path name="compress-offload-playback2-sec-mi2s">
+        <ctl name="SEC_MI2S_RX Audio Mixer MultiMedia7" value="1" />
+        <ctl name="left Profile" value="music" />
     </path>
 
     <path name="compress-offload-playback2 hdmi">
@@ -832,12 +895,17 @@
         <ctl name="SLIMBUS_6_RX Audio Mixer MultiMedia7" value="1" />
     </path>
 
-    <path name="compress-offload-playback2 anc-headphones">
-        <ctl name="SLIMBUS_6_RX Audio Mixer MultiMedia7" value="1" />
+    <path name="compress-offload-playback2-tert-mi2s">
+        <ctl name="TERT_MI2S_RX Audio Mixer MultiMedia7" value="1" />
     </path>
 
     <path name="compress-offload-playback2 headphones-44.1">
         <ctl name="SLIMBUS_5_RX Audio Mixer MultiMedia7" value="1" />
+    </path>
+
+    <path name="compress-offload-playback2-sec-mi2s speaker-and-headphones">
+        <path name="compress-offload-playback2 headphones" />
+        <path name="compress-offload-playback2-sec-mi2s" />
     </path>
 
     <path name="compress-offload-playback2 speaker-and-headphones">
@@ -845,13 +913,17 @@
         <path name="compress-offload-playback2" />
     </path>
 
-    <path name="compress-offload-playback2 speaker-and-anc-headphones">
-        <path name="compress-offload-playback2 anc-headphones" />
-        <path name="compress-offload-playback2" />
-    </path>
-
     <path name="compress-offload-playback3">
         <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia10" value="1" />
+    </path>
+
+    <path name="compress-offload-playback3-sec-mi2s">
+        <ctl name="SEC_MI2S_RX Audio Mixer MultiMedia10" value="1" />
+        <ctl name="left Profile" value="music" />
+    </path>
+
+    <path name="compress-offload-playback3-tert-mi2s">
+        <ctl name="TERT_MI2S_RX Audio Mixer MultiMedia10" value="1" />
     </path>
 
     <path name="compress-offload-playback3 hdmi">
@@ -890,12 +962,13 @@
         <ctl name="SLIMBUS_6_RX Audio Mixer MultiMedia10" value="1" />
     </path>
 
-    <path name="compress-offload-playback3 anc-headphones">
-        <ctl name="SLIMBUS_6_RX Audio Mixer MultiMedia10" value="1" />
-    </path>
-
     <path name="compress-offload-playback3 headphones-44.1">
         <ctl name="SLIMBUS_5_RX Audio Mixer MultiMedia10" value="1" />
+    </path>
+
+    <path name="compress-offload-playback3-sec-mi2s speaker-and-headphones">
+        <path name="compress-offload-playback3 headphones" />
+        <path name="compress-offload-playback3-sec-mi2s" />
     </path>
 
     <path name="compress-offload-playback3 speaker-and-headphones">
@@ -903,13 +976,17 @@
         <path name="compress-offload-playback3" />
     </path>
 
-    <path name="compress-offload-playback3 speaker-and-anc-headphones">
-        <path name="compress-offload-playback3 anc-headphones" />
-        <path name="compress-offload-playback3" />
-    </path>
-
     <path name="compress-offload-playback4">
         <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia11" value="1" />
+    </path>
+
+    <path name="compress-offload-playback4-sec-mi2s">
+        <ctl name="SEC_MI2S_RX Audio Mixer MultiMedia11" value="1" />
+        <ctl name="left Profile" value="music" />
+    </path>
+
+    <path name="compress-offload-playback4-tert-mi2s">
+        <ctl name="TERT_MI2S_RX Audio Mixer MultiMedia11" value="1" />
     </path>
 
     <path name="compress-offload-playback4 hdmi">
@@ -948,12 +1025,13 @@
         <ctl name="SLIMBUS_6_RX Audio Mixer MultiMedia11" value="1" />
     </path>
 
-    <path name="compress-offload-playback4 anc-headphones">
-        <ctl name="SLIMBUS_6_RX Audio Mixer MultiMedia10" value="1" />
-    </path>
-
     <path name="compress-offload-playback4 headphones-44.1">
         <ctl name="SLIMBUS_5_RX Audio Mixer MultiMedia11" value="1" />
+    </path>
+
+    <path name="compress-offload-playback4-sec-mi2s speaker-and-headphones">
+        <path name="compress-offload-playback4 headphones" />
+        <path name="compress-offload-playback4-sec-mi2s" />
     </path>
 
     <path name="compress-offload-playback4 speaker-and-headphones">
@@ -961,13 +1039,17 @@
         <path name="compress-offload-playback4" />
     </path>
 
-    <path name="compress-offload-playback4 speaker-and-anc-headphones">
-        <path name="compress-offload-playback4 anc-headphones" />
-        <path name="compress-offload-playback4" />
-    </path>
-
     <path name="compress-offload-playback5">
         <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia12" value="1" />
+    </path>
+
+    <path name="compress-offload-playback5-sec-mi2s">
+        <ctl name="SEC_MI2S_RX Audio Mixer MultiMedia12" value="1" />
+        <ctl name="left Profile" value="music" />
+    </path>
+
+    <path name="compress-offload-playback5-tert-mi2s">
+        <ctl name="TERT_MI2S_RX Audio Mixer MultiMedia12" value="1" />
     </path>
 
     <path name="compress-offload-playback5 hdmi">
@@ -1006,12 +1088,13 @@
         <ctl name="SLIMBUS_6_RX Audio Mixer MultiMedia12" value="1" />
     </path>
 
-    <path name="compress-offload-playback5 anc-headphones">
-        <ctl name="SLIMBUS_6_RX Audio Mixer MultiMedia12" value="1" />
-    </path>
-
     <path name="compress-offload-playback5 headphones-44.1">
         <ctl name="SLIMBUS_5_RX Audio Mixer MultiMedia12" value="1" />
+    </path>
+
+    <path name="compress-offload-playback5-sec-mi2s speaker-and-headphones">
+        <path name="compress-offload-playback5 headphones" />
+        <path name="compress-offload-playback5-sec-mi2s" />
     </path>
 
     <path name="compress-offload-playback5 speaker-and-headphones">
@@ -1019,13 +1102,17 @@
         <path name="compress-offload-playback5" />
     </path>
 
-    <path name="compress-offload-playback5 speaker-and-anc-headphones">
-        <path name="compress-offload-playback5 anc-headphones" />
-        <path name="compress-offload-playback5" />
-    </path>
-
     <path name="compress-offload-playback6">
         <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia13" value="1" />
+    </path>
+
+    <path name="compress-offload-playback6-sec-mi2s">
+        <ctl name="SEC_MI2S_RX Audio Mixer MultiMedia13" value="1" />
+        <ctl name="left Profile" value="music" />
+    </path>
+
+    <path name="compress-offload-playback6-tert-mi2s">
+        <ctl name="TERT_MI2S_RX Audio Mixer MultiMedia13" value="1" />
     </path>
 
     <path name="compress-offload-playback6 hdmi">
@@ -1064,12 +1151,13 @@
         <ctl name="SLIMBUS_6_RX Audio Mixer MultiMedia13" value="1" />
     </path>
 
-    <path name="compress-offload-playback6 anc-headphones">
-        <ctl name="SLIMBUS_6_RX Audio Mixer MultiMedia13" value="1" />
-    </path>
-
     <path name="compress-offload-playback6 headphones-44.1">
         <ctl name="SLIMBUS_5_RX Audio Mixer MultiMedia13" value="1" />
+    </path>
+
+    <path name="compress-offload-playback6-sec-mi2s speaker-and-headphones">
+        <path name="compress-offload-playback6 headphones" />
+        <path name="compress-offload-playback6-sec-mi2s" />
     </path>
 
     <path name="compress-offload-playback6 speaker-and-headphones">
@@ -1077,13 +1165,17 @@
         <path name="compress-offload-playback6" />
     </path>
 
-    <path name="compress-offload-playback6 speaker-and-anc-headphones">
-        <path name="compress-offload-playback6 anc-headphones" />
-        <path name="compress-offload-playback6" />
-    </path>
-
     <path name="compress-offload-playback7">
         <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia14" value="1" />
+    </path>
+
+    <path name="compress-offload-playback7-sec-mi2s">
+        <ctl name="SEC_MI2S_RX Audio Mixer MultiMedia14" value="1" />
+        <ctl name="left Profile" value="music" />
+    </path>
+
+    <path name="compress-offload-playback7-tert-mi2s">
+        <ctl name="TERT_MI2S_RX Audio Mixer MultiMedia14" value="1" />
     </path>
 
     <path name="compress-offload-playback7 hdmi">
@@ -1122,12 +1214,13 @@
         <ctl name="SLIMBUS_6_RX Audio Mixer MultiMedia14" value="1" />
     </path>
 
-    <path name="compress-offload-playback7 anc-headphones">
-        <ctl name="SLIMBUS_6_RX Audio Mixer MultiMedia14" value="1" />
-    </path>
-
     <path name="compress-offload-playback7 headphones-44.1">
         <ctl name="SLIMBUS_5_RX Audio Mixer MultiMedia14" value="1" />
+    </path>
+
+    <path name="compress-offload-playback7-sec-mi2s speaker-and-headphones">
+        <path name="compress-offload-playback7 headphones" />
+        <path name="compress-offload-playback7-sec-mi2s" />
     </path>
 
     <path name="compress-offload-playback7 speaker-and-headphones">
@@ -1135,13 +1228,17 @@
         <path name="compress-offload-playback7" />
     </path>
 
-    <path name="compress-offload-playback7 speaker-and-anc-headphones">
-        <path name="compress-offload-playback7 anc-headphones" />
-        <path name="compress-offload-playback7" />
-    </path>
-
     <path name="compress-offload-playback8">
         <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia15" value="1" />
+    </path>
+
+    <path name="compress-offload-playback8-sec-mi2s">
+        <ctl name="SEC_MI2S_RX Audio Mixer MultiMedia15" value="1" />
+        <ctl name="left Profile" value="music" />
+    </path>
+
+    <path name="compress-offload-playback8-tert-mi2s">
+        <ctl name="TERT_MI2S_RX Audio Mixer MultiMedia15" value="1" />
     </path>
 
     <path name="compress-offload-playback8 hdmi">
@@ -1180,12 +1277,13 @@
         <ctl name="SLIMBUS_6_RX Audio Mixer MultiMedia15" value="1" />
     </path>
 
-    <path name="compress-offload-playback8 anc-headphones">
-        <ctl name="SLIMBUS_6_RX Audio Mixer MultiMedia15" value="1" />
-    </path>
-
     <path name="compress-offload-playback8 headphones-44.1">
         <ctl name="SLIMBUS_5_RX Audio Mixer MultiMedia15" value="1" />
+    </path>
+
+    <path name="compress-offload-playback8-sec-mi2s speaker-and-headphones">
+        <path name="compress-offload-playback8 headphones" />
+        <path name="compress-offload-playback8-sec-mi2s" />
     </path>
 
     <path name="compress-offload-playback8 speaker-and-headphones">
@@ -1193,13 +1291,17 @@
         <path name="compress-offload-playback8" />
     </path>
 
-    <path name="compress-offload-playback8 speaker-and-anc-headphones">
-        <path name="compress-offload-playback8 anc-headphones" />
-        <path name="compress-offload-playback8" />
-    </path>
-
     <path name="compress-offload-playback9">
         <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia16" value="1" />
+    </path>
+
+    <path name="compress-offload-playback9-sec-mi2s">
+        <ctl name="SEC_MI2S_RX Audio Mixer MultiMedia16" value="1" />
+        <ctl name="left Profile" value="music" />
+    </path>
+
+    <path name="compress-offload-playback9-tert-mi2s">
+        <ctl name="TERT_MI2S_RX Audio Mixer MultiMedia16" value="1" />
     </path>
 
     <path name="compress-offload-playback9 hdmi">
@@ -1238,21 +1340,17 @@
         <ctl name="SLIMBUS_6_RX Audio Mixer MultiMedia16" value="1" />
     </path>
 
-    <path name="compress-offload-playback9 anc-headphones">
-        <ctl name="SLIMBUS_6_RX Audio Mixer MultiMedia16" value="1" />
-    </path>
-
     <path name="compress-offload-playback9 headphones-44.1">
         <ctl name="SLIMBUS_5_RX Audio Mixer MultiMedia16" value="1" />
     </path>
 
-    <path name="compress-offload-playback9 speaker-and-headphones">
+    <path name="compress-offload-playback9-sec-mi2s speaker-and-headphones">
         <path name="compress-offload-playback9 headphones" />
-        <path name="compress-offload-playback9" />
+        <path name="compress-offload-playback9-sec-mi2s" />
     </path>
 
-    <path name="compress-offload-playback9 speaker-and-anc-headphones">
-        <path name="compress-offload-playback9 anc-headphones" />
+    <path name="compress-offload-playback9 speaker-and-headphones">
+        <path name="compress-offload-playback9 headphones" />
         <path name="compress-offload-playback9" />
     </path>
 
@@ -1301,7 +1399,7 @@
     </path>
 
     <path name="low-latency-record bt-sco">
-      <ctl name="MultiMedia5 Mixer AUX_PCM_UL_TX" value="1" />
+      <ctl name="MultiMedia5 Mixer AUX_PCM_TX" value="1" />
     </path>
 
     <path name="low-latency-record bt-sco-wb">
@@ -1325,6 +1423,14 @@
         <ctl name="SLIM_0_RX_Voice Mixer CSVoice" value="1" />
         <ctl name="Voice_Tx Mixer SLIM_0_TX_Voice" value="1" />
     </path>
+
+    <path name="voice-call-sec-mi2s">
+        <ctl name="VOC_EXT_EC MUX" value="SEC_MI2S_TX" />
+        <ctl name="SEC_MI2S_RX_Voice Mixer CSVoice" value="1" />
+        <ctl name="left Profile" value="speech" />
+        <ctl name="Voice_Tx Mixer SLIM_0_TX_Voice" value="1" />
+    </path>
+
 
     <path name="voice-call hdmi">
         <ctl name="HDMI_RX_Voice Mixer CSVoice" value="1" />
@@ -1352,11 +1458,6 @@
     </path>
 
     <path name="voice-call headphones">
-        <ctl name="SLIM_6_RX_Voice Mixer CSVoice" value="1" />
-        <ctl name="Voice_Tx Mixer SLIM_0_TX_Voice" value="1" />
-    </path>
-
-    <path name="voice-call anc-headphones">
         <ctl name="SLIM_6_RX_Voice Mixer CSVoice" value="1" />
         <ctl name="Voice_Tx Mixer SLIM_0_TX_Voice" value="1" />
     </path>
@@ -1406,11 +1507,6 @@
         <ctl name="Voice2_Tx Mixer SLIM_0_TX_Voice2" value="1" />
     </path>
 
-    <path name="voice2-call anc-headphones">
-        <ctl name="SLIM_6_RX_Voice Mixer Voice2" value="1" />
-        <ctl name="Voice2_Tx Mixer SLIM_0_TX_Voice2" value="1" />
-    </path>
-
     <path name="play-fm">
         <ctl name="Tert MI2S LOOPBACK Volume" value="1" />
         <ctl name="SLIMBUS_0_RX Port Mixer TERT_MI2S_TX" value="1" />
@@ -1418,12 +1514,6 @@
     </path>
 
     <path name="play-fm headphones">
-        <ctl name="Tert MI2S LOOPBACK Volume" value="1" />
-        <ctl name="SLIMBUS_6_RX Port Mixer TERT_MI2S_TX" value="1" />
-        <ctl name="SLIMBUS6_DL_HL Switch" value="1" />
-    </path>
-
-    <path name="play-fm anc-headphones">
         <ctl name="Tert MI2S LOOPBACK Volume" value="1" />
         <ctl name="SLIMBUS_6_RX Port Mixer TERT_MI2S_TX" value="1" />
         <ctl name="SLIMBUS6_DL_HL Switch" value="1" />
@@ -1567,14 +1657,6 @@
         <ctl name="SLIMBUS6_DL_HL Switch" value="1" />
     </path>
 
-    <path name="hfp-sco anc-headphones">
-        <ctl name="HFP_PRI_AUX_UL_HL Switch" value="1" />
-        <ctl name="SLIMBUS_6_RX Port Mixer AUX_PCM_UL_TX" value="1" />
-        <ctl name="AUX_PCM_RX Audio Mixer MultiMedia6" value="1" />
-        <ctl name="MultiMedia6 Mixer SLIM_0_TX" value="1" />
-        <ctl name="SLIMBUS6_DL_HL Switch" value="1" />
-    </path>
-
 
     <path name="hfp-sco-wb">
         <ctl name="AUX PCM SampleRate" value="16000" />
@@ -1586,23 +1668,20 @@
         <path name="hfp-sco headphones" />
     </path>
 
-    <path name="hfp-sco-wb anc-headphones">
-        <ctl name="AUX PCM SampleRate" value="16000" />
-        <path name="hfp-sco anc-headphones" />
-    </path>
-
 
     <path name="volte-call">
         <ctl name="SLIM_0_RX_Voice Mixer VoLTE" value="1" />
         <ctl name="VoLTE_Tx Mixer SLIM_0_TX_VoLTE" value="1" />
     </path>
 
-    <path name="volte-call headphones">
-        <ctl name="SLIM_6_RX_Voice Mixer VoLTE" value="1" />
+    <path name="volte-call-sec-mi2s">
+        <ctl name="VOC_EXT_EC MUX" value="SEC_MI2S_TX" />
+        <ctl name="SEC_MI2S_RX_Voice Mixer VoLTE" value="1" />
+        <ctl name="left Profile" value="speech" />
         <ctl name="VoLTE_Tx Mixer SLIM_0_TX_VoLTE" value="1" />
     </path>
 
-    <path name="volte-call anc-headphones">
+    <path name="volte-call headphones">
         <ctl name="SLIM_6_RX_Voice Mixer VoLTE" value="1" />
         <ctl name="VoLTE_Tx Mixer SLIM_0_TX_VoLTE" value="1" />
     </path>
@@ -1642,12 +1721,14 @@
         <ctl name="Voip_Tx Mixer SLIM_0_TX_Voip" value="1" />
     </path>
 
-    <path name="compress-voip-call headphones">
-        <ctl name="SLIM_6_RX_Voice Mixer Voip" value="1" />
+    <path name="compress-voip-call-sec-mi2s">
+        <ctl name="VOC_EXT_EC MUX" value="SEC_MI2S_TX" />
+        <ctl name="SEC_MI2S_RX_Voice Mixer Voip" value="1" />
+        <ctl name="left Profile" value="speech" />
         <ctl name="Voip_Tx Mixer SLIM_0_TX_Voip" value="1" />
     </path>
 
-    <path name="compress-voip-call anc-headphones">
+    <path name="compress-voip-call headphones">
         <ctl name="SLIM_6_RX_Voice Mixer Voip" value="1" />
         <ctl name="Voip_Tx Mixer SLIM_0_TX_Voip" value="1" />
     </path>
@@ -1689,11 +1770,6 @@
         <ctl name="VoWLAN_Tx Mixer SLIM_0_TX_VoWLAN" value="1" />
     </path>
 
-    <path name="vowlan-call anc-headphones">
-        <ctl name="SLIM_6_RX_Voice Mixer VoWLAN" value="1" />
-        <ctl name="VoWLAN_Tx Mixer SLIM_0_TX_VoWLAN" value="1" />
-    </path>
-
     <path name="vowlan-call hdmi">
         <ctl name="HDMI_RX_Voice Mixer VoWLAN" value="1" />
         <ctl name="VoWLAN_Tx Mixer SLIM_0_TX_VoWLAN" value="1" />
@@ -1729,12 +1805,14 @@
         <ctl name="VoiceMMode1_Tx Mixer SLIM_0_TX_MMode1" value="1" />
     </path>
 
-    <path name="voicemmode1-call headphones">
-        <ctl name="SLIM_6_RX_Voice Mixer VoiceMMode1" value="1" />
+    <path name="voicemmode1-call-sec-mi2s">
+        <ctl name="VOC_EXT_EC MUX" value="SEC_MI2S_TX" />
+        <ctl name="SEC_MI2S_RX_Voice Mixer VoiceMMode1" value="1" />
+        <ctl name="left Profile" value="speech" />
         <ctl name="VoiceMMode1_Tx Mixer SLIM_0_TX_MMode1" value="1" />
     </path>
 
-    <path name="voicemmode1-call anc-headphones">
+    <path name="voicemmode1-call headphones">
         <ctl name="SLIM_6_RX_Voice Mixer VoiceMMode1" value="1" />
         <ctl name="VoiceMMode1_Tx Mixer SLIM_0_TX_MMode1" value="1" />
     </path>
@@ -1774,12 +1852,14 @@
         <ctl name="VoiceMMode2_Tx Mixer SLIM_0_TX_MMode2" value="1" />
     </path>
 
-    <path name="voicemmode2-call headphones">
-        <ctl name="SLIM_6_RX_Voice Mixer VoiceMMode2" value="1" />
+    <path name="voicemmode2-call-sec-mi2s">
+        <ctl name="VOC_EXT_EC MUX" value="SEC_MI2S_TX" />
+        <ctl name="SEC_MI2S_RX_Voice Mixer VoiceMMode2" value="1" />
+        <ctl name="left Profile" value="speech" />
         <ctl name="VoiceMMode2_Tx Mixer SLIM_0_TX_MMode2" value="1" />
     </path>
 
-    <path name="voicemmode2-call anc-headphones">
+    <path name="voicemmode2-call headphones">
         <ctl name="SLIM_6_RX_Voice Mixer VoiceMMode2" value="1" />
         <ctl name="VoiceMMode2_Tx Mixer SLIM_0_TX_MMode2" value="1" />
     </path>
@@ -1871,6 +1951,15 @@
         <ctl name="ADC MUX0" value="AMIC" />
         <ctl name="AMIC MUX0" value="ADC2" />
         <ctl name="IIR0 INP0 MUX" value="DEC0" />
+    </path>
+
+    <path name="adc3">
+        <ctl name="AIF1_CAP Mixer SLIM TX8" value="1"/>
+        <ctl name="SLIM_0_TX Channels" value="One" />
+        <ctl name="SLIM TX8 MUX" value="DEC8" />
+        <ctl name="ADC MUX8" value="AMIC" />
+        <ctl name="AMIC MUX8" value="ADC3" />
+        <ctl name="IIR0 INP0 MUX" value="DEC8" />
     </path>
 
     <path name="adc5">
@@ -2019,7 +2108,7 @@
     </path>
 
     <path name="speaker-mic">
-        <path name="dmic3" />
+        <path name="adc3" />
     </path>
 
     <path name="speaker-mic-liquid">
@@ -2073,7 +2162,8 @@
     </path>
 
     <path name="handset-mic">
-        <path name="dmic1" />
+        <path name="adc1" />
+        <ctl name="ADC1 Volume" value="12" />
     </path>
 
     <path name="handset-mic-db">
@@ -2130,6 +2220,16 @@
         <ctl name="RX INT2 DEM MUX" value="CLSH_DSM_OUT" />
     </path>
 
+    <path name="hifi-headphones">
+        <ctl name="SLIM RX0 MUX" value="AIF_MIX1_PB" />
+        <ctl name="SLIM RX1 MUX" value="AIF_MIX1_PB" />
+        <ctl name="SLIM_0_RX Channels" value="Two" />
+        <ctl name="RX INT3_2 MUX" value="RX1" />
+        <ctl name="RX INT4_2 MUX" value="RX0" />
+        <ctl name="COMP3 Switch" value="1" />
+        <ctl name="COMP4 Switch" value="1" />
+    </path>
+
     <path name="headphones-44.1">
         <ctl name="SLIM RX3 MUX" value="AIF3_PB" />
         <ctl name="SLIM RX4 MUX" value="AIF3_PB" />
@@ -2177,6 +2277,7 @@
 
     <path name="voice-speaker-mic">
         <path name="speaker-mic" />
+        <ctl name="ADC3 Volume" value="12" />
     </path>
 
     <path name="voice-speaker-vbat">
@@ -2401,11 +2502,11 @@
         <ctl name="AIF1_CAP Mixer SLIM TX7" value="1" />
         <ctl name="AIF1_CAP Mixer SLIM TX8" value="1" />
         <ctl name="SLIM TX7 MUX" value="DEC7" />
-        <ctl name="ADC MUX7" value="DMIC" />
-        <ctl name="DMIC MUX7" value="DMIC0" />
+        <ctl name="ADC MUX7" value="AMIC" />
+        <ctl name="AMIC MUX7" value="ADC1" />
         <ctl name="SLIM TX8 MUX" value="DEC8" />
-        <ctl name="ADC MUX8" value="DMIC" />
-        <ctl name="DMIC MUX8" value="DMIC3" />
+        <ctl name="ADC MUX8" value="AMIC" />
+        <ctl name="AMIC MUX8" value="ADC3" />
         <ctl name="SLIM_0_TX Channels" value="Two" />
     </path>
 
@@ -2424,6 +2525,8 @@
     <path name="dmic-endfire">
         <path name="handset-dmic-endfire" />
         <ctl name="IIR0 INP0 MUX" value="DEC7" />
+        <ctl name="ADC1 Volume" value="12" />
+        <ctl name="ADC3 Volume" value="12" />
     </path>
 
     <path name="dmic-endfire-liquid">
@@ -2433,6 +2536,13 @@
 
     <path name="handset-stereo-dmic-ef">
         <path name="handset-dmic-endfire" />
+        <ctl name="MultiMedia2 Mixer SEC_MI2S_TX" value="1" />
+        <ctl name="ADC1 Volume" value="16" />
+        <ctl name="ADC3 Volume" value="16" />
+    </path>
+
+    <path name="handset-stereo-speaker-as-mic">
+        <ctl name="left Profile" value="I2S_SaaM" />
     </path>
 
     <path name="speaker-stereo-dmic-ef">
@@ -2448,7 +2558,7 @@
     </path>
 
     <path name="voice-speaker-dmic-ef">
-        <path name="speaker-dmic-endfire" />
+        <path name="voice-speaker-mic" />
     </path>
 
     <path name="voice-rec-dmic-ef">

@@ -177,6 +177,10 @@ on boot
     chown wifi wifi /sys/class/net/bond0/bonding/queue_id
 
 # msm specific files that need to be created on /data
+
+on post-fs
+    chmod 0644  /sys/devices/soc/75ba000.i2c/i2c-12/12-004a/update_fw
+
 on post-fs-data
     #Create directories for Fingerprint
     mkdir /data/misc/stargate 0770 system system

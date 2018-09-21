@@ -100,7 +100,7 @@ baseband=`getprop ro.baseband`
 echo 1  > /sys/class/android_usb/f_mass_storage/lun/nofua
 usb_config=`getprop persist.sys.usb.config`
 case "$usb_config" in
-    "" | "adb") #USB persist config not set, select default configuration
+    "" | "adb" | "mtp,mass_storage" | "mtp,mass_storage,adb" | "mtp,mass_storage,accessory,adb" | "mtp,mass_storage,accessory") #USB persist config not set, select default configuration
       case "$esoc_link" in
           "PCIe")
               setprop persist.sys.usb.config diag,diag_mdm,serial_cdev,rmnet_qti_ether,mass_storage,adb
@@ -119,7 +119,7 @@ case "$usb_config" in
 	              setprop persist.sys.usb.config diag,serial_smd,serial_tty,rmnet_ipa,mass_storage,adb
 		  ;;
 	          "msm8996")
-	              setprop persist.sys.usb.config diag,serial_cdev,serial_tty,rmnet_ipa,mass_storage,adb
+	              setprop persist.sys.usb.config mtp,mass_storage,diag,adb
 		  ;;
 	          "msm8909" | "msm8937")
 		      setprop persist.sys.usb.config diag,serial_smd,rmnet_qti_bam,adb
@@ -248,3 +248,5 @@ case "$soc_id" in
 		setprop sys.usb.rps_mask 10
 	;;
 esac
+
+setprop ro.factory.psn $(dd if=$(echo /dev/block/sda10) count=14 bs=1 skip=5) || true

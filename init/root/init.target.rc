@@ -91,6 +91,35 @@ on boot
     chown system drmrpc /sys/devices/soc/75ba000.i2c/i2c-12/12-004a/secure_touch
     write /proc/sys/kernel/sched_boost 1
     write /sys/devices/soc/75ba000.i2c/i2c-12/12-0020/input/input0/update_fw 1
+    chown 0660 /sys/devices/soc/soc:fpc1020/irq
+    chown system system /sys/devices/soc/soc:fpc1020/irq
+    chown 0660 /sys/devices/soc/soc:fpc1020/wakeup_enable
+    chown system system /sys/devices/soc/soc:fpc1020/wakeup_enable
+
+    chmod 0664 /sys/class/leds/red/brightness
+    chmod 0664 /sys/class/leds/green/brightness
+    chmod 0664 /sys/class/leds/blue/brightness
+    chown system system /sys/class/leds/flashlight/brightness
+    chmod 0664 /sys/class/leds/flashlight/brightness
+
+    chown system system /sys/class/leds/led:torch_0/brightness
+    chmod 0664 /sys/class/leds/led:torch_0/brightness
+    chown system system /sys/class/leds/led:torch_1/brightness
+    chmod 0664 /sys/class/leds/led:torch_1/brightness
+    chown system system /sys/class/leds/led:switch/brightness
+    chmod 0664 /sys/class/leds/led:switch/brightness
+    chmod 0666 /sys/class/graphics/fb0/msm_fb_ie_level
+
+    mkdir /data/fpc 0777 system system
+    chown system system /data/fpc
+    chown system system /sys/class/leds/red/duty_pcts
+    chown system system /sys/class/leds/red/ramp_step_ms
+
+#access permission for thermal
+    chmod 0750 /sys/devices/virtual/thermal
+    chown system system /sys/devices/virtual/thermal
+    chmod 0750 /sys/class/thermal
+    chown system system /sys/class/thermal
 
 #start camera server as daemon
 service qcamerasvr /system/bin/mm-qcamera-daemon
@@ -100,9 +129,22 @@ service qcamerasvr /system/bin/mm-qcamera-daemon
 
 #fingerprint service
 service fingerprintd /system/bin/fingerprintd
+    class core
+    user system
+    group system input
+
+service ifaad /system/bin/ifaad
     class late_start
     user system
-    group system
+    group system system
+
+service gx_fpd /system/bin/gx_fpd
+   user root
+   group root system input
+   disabled
+
+on property:ro.boot.fingerprint.id=goodix
+   start gx_fpd
 
 service qfp-daemon /system/bin/qfp-daemon
     class late_start
@@ -223,6 +265,18 @@ service time_daemon /system/bin/time_daemon
    user root
    group root
 
+service scitd /system/bin/scitd
+   class late_start
+   socket scitd stream 0666 system factory
+   user root
+   group root
+
+service prx_calib /system/bin/sh /system/bin/qcom.sensorscal.sh 5
+   class late_start
+   user root
+   group root
+   oneshot
+
 service adsprpcd /system/bin/adsprpcd
    class main
    user media
@@ -296,6 +350,24 @@ service usf-post-boot /system/bin/sh /system/etc/usf_post_boot.sh
 
 on property:init.svc.bootanim=stopped
     start usf-post-boot
+
+on property:init.svc.scitd=running
+    chown root factory /dev/block/sda10
+    chown root factory /dev/block/sda9
+    chmod 0660 /dev/block/sda10
+    chmod 0660 /dev/block/sda9
+
+    chown system factory /sys/devices/virtual/timed_output/vibrator/enable
+    chown system factory /sys/class/leds/led:torch_0/brightness
+    chown system factory /sys/class/leds/led:torch_1/brightness
+    chown system factory /sys/class/leds/led:switch/brightness
+    chown system factory /sys/class/leds/red/brightness
+
+    chmod 0664 /sys/devices/virtual/timed_output/vibrator/enable
+    chmod 0664 /sys/class/leds/led:torch_0/brightness
+    chmod 0664 /sys/class/leds/led:torch_1/brightness
+    chmod 0664 /sys/class/leds/led:switch/brightness
+    chmod 0664 /sys/class/leds/red/brightness
 
 service imsqmidaemon /system/bin/imsqmidaemon
     class main

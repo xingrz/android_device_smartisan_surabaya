@@ -43,6 +43,17 @@ service qcom-usb-sh /system/bin/sh /init.qcom.usb.sh
     user root
     oneshot
 
+on property:sys.usb.config=adb
+    stop adbd
+    write /sys/class/android_usb/android0/enable 0
+    write /sys/class/android_usb/android0/idVendor 05C6
+    write /sys/class/android_usb/android0/idProduct 9025
+    write /sys/class/android_usb/android0/f_diag/clients diag
+    write /sys/class/android_usb/android0/functions diag,adb,mass_storage
+    write /sys/class/android_usb/android0/enable 1
+    start adbd
+    setprop sys.usb.state ${sys.usb.config}
+    
 # Following are the parameters required for usb functionality. They provide configurable options like
 # product_id/vendor id and allows specifying required functions:
 #
@@ -865,17 +876,79 @@ on property:sys.usb.config=ptp,adb
 
 on property:sys.usb.config=mtp
     write /sys/class/android_usb/android0/enable 0
-    write /sys/class/android_usb/android0/idVendor 05C6
-    write /sys/class/android_usb/android0/idProduct F003
-    write /sys/class/android_usb/android0/functions mtp
+    write /sys/class/android_usb/android0/idVendor 29A9
+    write /sys/class/android_usb/android0/idProduct 7019
+    write /sys/class/android_usb/android0/functions mtp,mass_storage
+    write /sys/class/android_usb/android0/f_mass_storage/lun/file /system/etc/cdrom_install.iso
     write /sys/class/android_usb/android0/enable 1
     setprop sys.usb.state ${sys.usb.config}
 
 on property:sys.usb.config=mtp,adb
     write /sys/class/android_usb/android0/enable 0
-    write /sys/class/android_usb/android0/idVendor 05C6
-    write /sys/class/android_usb/android0/idProduct 9039
-    write /sys/class/android_usb/android0/functions mtp,adb
+    write /sys/class/android_usb/android0/idVendor 29A9
+    write /sys/class/android_usb/android0/idProduct 701A
+    write /sys/class/android_usb/android0/functions mtp,mass_storage,adb
+    write /sys/class/android_usb/android0/f_mass_storage/lun/file /system/etc/cdrom_install.iso
+    write /sys/class/android_usb/android0/enable 1
+    start adbd
+    setprop sys.usb.state ${sys.usb.config}
+
+on property:sys.usb.config=mtp,mass_storage
+    write /sys/class/android_usb/android0/enable 0
+    write /sys/class/android_usb/android0/idVendor 29A9
+    write /sys/class/android_usb/android0/idProduct 701B
+    write /sys/class/android_usb/android0/functions mtp,mass_storage
+    write /sys/class/android_usb/android0/f_mass_storage/lun/file /system/etc/cdrom_install.iso
+    write /sys/class/android_usb/android0/enable 1
+    setprop sys.usb.state ${sys.usb.config}
+
+on property:sys.usb.config=mtp,mass_storage,adb
+    write /sys/class/android_usb/android0/enable 0
+    write /sys/class/android_usb/android0/idVendor 29A9
+    write /sys/class/android_usb/android0/idProduct 701B
+    write /sys/class/android_usb/android0/functions mtp,mass_storage,adb
+    write /sys/class/android_usb/android0/f_mass_storage/lun/file /system/etc/cdrom_install.iso
+    write /sys/class/android_usb/android0/enable 1
+    start adbd
+    setprop sys.usb.state ${sys.usb.config}
+
+on property:sys.usb.config=mtp,mass_storage,diag
+    write /sys/class/android_usb/android0/enable 0
+    write /sys/class/android_usb/android0/idVendor 29A9
+    write /sys/class/android_usb/android0/idProduct 701C
+    write /sys/class/android_usb/android0/f_diag/clients diag
+    write /sys/class/android_usb/android0/functions mtp,mass_storage,diag
+    write /sys/class/android_usb/android0/f_mass_storage/lun/file /system/etc/cdrom_install.iso
+    write /sys/class/android_usb/android0/enable 1
+    setprop sys.usb.state ${sys.usb.config}
+
+on property:sys.usb.config=mtp,mass_storage,diag,adb
+    write /sys/class/android_usb/android0/enable 0
+    write /sys/class/android_usb/android0/idVendor 29A9
+    write /sys/class/android_usb/android0/idProduct 701C
+    write /sys/class/android_usb/android0/f_diag/clients diag
+    write /sys/class/android_usb/android0/functions mtp,mass_storage,diag,adb
+    write /sys/class/android_usb/android0/f_mass_storage/lun/file /system/etc/cdrom_install.iso
+    write /sys/class/android_usb/android0/enable 1
+    start adbd
+    setprop sys.usb.state ${sys.usb.config}
+
+
+on property:sys.usb.config=mtp,mass_storage,accessory
+    write /sys/class/android_usb/android0/enable 0
+    write /sys/class/android_usb/android0/idVendor 29A9
+    write /sys/class/android_usb/android0/idProduct 701C
+    write /sys/class/android_usb/android0/functions mtp,mass_storage,accessory
+    write /sys/class/android_usb/android0/f_mass_storage/lun/file /system/etc/cdrom_install.iso
+    write /sys/class/android_usb/android0/enable 1
+    setprop sys.usb.state ${sys.usb.config}
+
+on property:sys.usb.config=mtp,mass_storage,accessory,adb
+    write /sys/class/android_usb/android0/enable 0
+    write /sys/class/android_usb/android0/idVendor 29A9
+    write /sys/class/android_usb/android0/idProduct 701C
+    write /sys/class/android_usb/android0/functions mtp,mass_storage,accessory,adb
+    write /sys/class/android_usb/android0/f_mass_storage/lun/file /system/etc/cdrom_install.iso
     write /sys/class/android_usb/android0/enable 1
     start adbd
     setprop sys.usb.state ${sys.usb.config}
