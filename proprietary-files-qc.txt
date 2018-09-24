@@ -102,7 +102,7 @@ vendor/lib64/libxml.so
 bin/hvdcp_opti
 
 # DPM
--priv-app/dpmserviceapp/dpmserviceapp.apk
+# -priv-app/dpmserviceapp/dpmserviceapp.apk
 bin/dpmd
 etc/dpm/dpm.conf
 etc/dpm/nsrm/NsrmConfiguration.xml
