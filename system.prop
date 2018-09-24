@@ -275,6 +275,6 @@ persist.hvdcp.allow_opti=1
 # system.prop for surabaya
 #
 
-ro.sf.lcd_density=480
+ro.sf.lcd_density=420
 #codename
 ro.product.codename=Smartisan M1
