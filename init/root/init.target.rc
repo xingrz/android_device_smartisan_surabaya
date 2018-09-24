@@ -487,3 +487,6 @@ on charger
     wait /dev/block/bootdevice
     mount_all charger.fstab.qcom
     start hvdcp_opti
+
+on property:ro.boot.fingerprint.id=*
+    setprop ro.hardware.fingerprint ${ro.boot.fingerprint.id}
