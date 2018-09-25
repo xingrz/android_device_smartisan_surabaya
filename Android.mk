@@ -27,4 +27,77 @@ LOCAL_PATH := $(call my-dir)
 
 ifeq ($(TARGET_DEVICE),surabaya)
 include $(call all-makefiles-under,$(LOCAL_PATH))
+
+include $(CLEAR_VARS)
+
+IMS_LIBS := libimscamera_jni.so libimsmedia_jni.so
+IMS_SYMLINKS := $(addprefix $(TARGET_OUT_APPS_PRIVILEGED)/ims/lib/arm64/,$(notdir $(IMS_LIBS)))
+$(IMS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	@echo "IMS lib link: $@"
+	@mkdir -p $(dir $@)
+	@rm -f $@
+	$(hide) ln -sf /system/lib64/$(notdir $@) $@
+
+ALL_DEFAULT_INSTALLED_MODULES += $(IMS_SYMLINKS)
+
+MSADP_SYMLINKS := $(TARGET_OUT_ETC)/firmware/msadp
+$(MSADP_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	@echo "MSADP link: $@"
+	@mkdir -p $(dir $@)
+	@rm -f $@
+	$(hide) ln -sf /dev/block/bootdevice/by-name/msadp $@
+
+ALL_DEFAULT_INSTALLED_MODULES += $(MSADP_SYMLINKS)
+
+RFS_MSM_ADSP_SYMLINKS := $(TARGET_OUT)/rfs/msm/adsp/
+$(RFS_MSM_ADSP_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	@echo "Creating RFS MSM ADSP folder structure: $@"
+	@rm -rf $@
+	@mkdir -p $@/readonly
+	$(hide) ln -sf /data/tombstones/lpass $@/ramdumps
+	$(hide) ln -sf /persist/rfs/msm/adsp $@/readwrite
+	$(hide) ln -sf /persist/rfs/shared $@/shared
+	$(hide) ln -sf /persist/hlos_rfs/shared $@/hlos
+	$(hide) ln -sf /firmware $@/readonly/firmware
+
+RFS_MSM_MPSS_SYMLINKS := $(TARGET_OUT)/rfs/msm/mpss/
+$(RFS_MSM_MPSS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	@echo "Creating RFS MSM MPSS folder structure: $@"
+	@rm -rf $@
+	@mkdir -p $@/readonly
+	$(hide) ln -sf /data/tombstones/modem $@/ramdumps
+	$(hide) ln -sf /persist/rfs/msm/mpss $@/readwrite
+	$(hide) ln -sf /persist/rfs/shared $@/shared
+	$(hide) ln -sf /persist/hlos_rfs/shared $@/hlos
+	$(hide) ln -sf /firmware $@/readonly/firmware
+
+ALL_DEFAULT_INSTALLED_MODULES += $(RFS_MSM_ADSP_SYMLINKS) $(RFS_MSM_MPSS_SYMLINKS)
+
+AUDIO_BINS := mbhc.bin wcd9320_anc.bin wcd9320_mad_audio.bin
+AUDIO_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/wcd9320/,$(notdir $(AUDIO_BINS)))
+$(AUDIO_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	@echo "Audio bin link: $@"
+	@mkdir -p $(dir $@)
+	@rm -f $@
+	$(hide) ln -sf /data/misc/audio/$(notdir $@) $@
+
+ALL_DEFAULT_INSTALLED_MODULES += $(AUDIO_SYMLINKS)
+
+WCNSS_INI_SYMLINK := $(TARGET_OUT_ETC)/firmware/wlan/qca_cld/WCNSS_qcom_cfg.ini
+$(WCNSS_INI_SYMLINK): $(LOCAL_INSTALLED_MODULE)
+	@echo "WCNSS config ini link: $@"
+	@mkdir -p $(dir $@)
+	@rm -f $@
+	$(hide) ln -sf /system/etc/wifi/$(notdir $@) $@
+
+WCNSS_MAC_BINS := wlan_mac.bin wlan_random_mac.bin
+WCNSS_MAC_SYMLINK := $(addprefix $(TARGET_OUT_ETC)/firmware/wlan/qca_cld/,$(notdir $(WCNSS_MAC_BINS)))
+$(WCNSS_MAC_SYMLINK): $(LOCAL_INSTALLED_MODULE)
+	@echo "WCNSS MAC bin link: $@"
+	@mkdir -p $(dir $@)
+	@rm -f $@
+	$(hide) ln -sf /persist/$(notdir $@) $@
+
+ALL_DEFAULT_INSTALLED_MODULES += $(WCNSS_INI_SYMLINK) $(WCNSS_MAC_SYMLINK)
+
 endif
