@@ -1025,14 +1025,19 @@ vendor/etc/scve/textreco/worddecoder/english_dictionary_20150213.bin
 vendor/etc/scve/textreco/worddecoder/korean.pos.20141226.bin
 vendor/etc/scve/textreco/worddecoder/korean_address_20150129.bin
 
+# Fingerprint
+bin/fingerprintd
+lib64/hw/fingerprint.default.so
+
 # Fingerprint - FPC
-lib64/hw/fpc_fingerprint.msm8996.so:lib64/hw/fingerprint.fpc.so
+lib64/hw/fpc_fingerprint.msm8996.so
 lib64/lib_fpc_tac_shared.so
 
 # Fingerprint - Goodix
 bin/gx_fpd
-lib64/hw/gxfingerprint.default.so:lib64/hw/fingerprint.goodix.so
+lib64/hw/gxfingerprint.default.so
 lib64/libfp_client.so
+lib64/libfpnav.so
 lib64/libfpservice.so
 
 # Fingerprint firmware - FPC
