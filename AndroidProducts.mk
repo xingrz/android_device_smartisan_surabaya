@@ -15,4 +15,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/mk_surabaya.mk
+    $(LOCAL_DIR)/omni_surabaya.mk

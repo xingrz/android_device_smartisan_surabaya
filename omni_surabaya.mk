@@ -20,11 +20,11 @@ PRODUCT_RELEASE_NAME := surabaya
 $(call inherit-product, build/target/product/embedded.mk)
 
 # Inherit from our custom product configuration
-$(call inherit-product, vendor/mk/config/common.mk)
+$(call inherit-product, vendor/omni/config/common.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := surabaya
-PRODUCT_NAME := mk_surabaya
+PRODUCT_NAME := omni_surabaya
 PRODUCT_BRAND := Smartisan
 PRODUCT_MODEL := SM901
 PRODUCT_MANUFACTURER := smartisan
